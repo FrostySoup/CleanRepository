@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Setup of AngularJs in ASP.NET MVC 5 </h2>
+<div ng-controller="csvImportController">
+    <input type="file" id="file1" name="file" multiple
+           ng-files="getTheFiles($files)" />
+
+    <div ng-view></div>
+
+    <input type="button" ng-click="uploadFiles()" value="Upload" />
+
+    <a href="/Companies">Companies Page</a>
+</div>

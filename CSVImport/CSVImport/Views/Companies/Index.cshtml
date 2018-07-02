@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div>Companies page</div>
+
+<div class="bs-component" ng-controller="companiesController">
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <td>External ID</td>
+            <td>Trading name</td>
+            <td>Company type</td>
+            <td>Is warehouse</td>
+            <td>Is forwarder</td>
+            <td>Phone</td>
+            <td>Fax</td>
+        </tr>
+        </thead>
+        <tbody>
+            <tr dir-paginate="company in companies| itemsPerPage: 10">
+                <td>{{company.ExternalId}}</td>
+                <td>{{company.TradingName}}</td>
+                <td>{{company.CompanyType}}</td>
+                <td>{{company.IsWarehouse}}</td>
+                <td>{{company.IsForwarder}}</td>
+                <td>{{company.Phone}}</td>
+                <td>{{company.Fax}}</td>
+            </tr>
+
+            <dir-pagination-controls></dir-pagination-controls>
+        </tbody>
+    </table>
+</div>

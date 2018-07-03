@@ -15,6 +15,9 @@
     }])
     .controller('csvImportController', function ($scope, $http) {
       var formdata = new FormData();
+
+      $scope.showLoader = false;
+
       $scope.getTheFiles = function ($files) {
         angular.forEach($files, function (value, key) {
           formdata.append(key, value);
@@ -22,6 +25,7 @@
       };
       
       $scope.uploadFiles = function () {
+        $scope.showLoader = true;
 
         var request = {
           method: 'POST',
@@ -34,7 +38,8 @@
         
         $http(request).
           then(function (response) {
-            alert("Upload complete");
+            $scope.showLoader = false;
+            alert("Upload complete");           
           });
       }
     }).controller('companiesController', [

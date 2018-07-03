@@ -9,18 +9,26 @@ namespace CustomMultipartFormDataStreamProvider.FileColumnsFormatter
     {
         private readonly List<string> _columnContainer = new List<string>{ "CounterPartID", "Name", "IsBuyer", "IsSeller", "Phone", "Fax" };
 
-        public Dictionary<string, int> ReadColumnIndexes(string[] headers, List<int> columnsList)
+        private const int IndexNotFound = -1;
+
+        public Dictionary<string, int> ReadColumnIndexes(string[] headers)
         {
-            var dictionary = headers.Select((v, i) => new { Key = v, Value = i })
+            return headers.Select((v, i) => new { Key = v, Value = i })
                 .ToDictionary(o => o.Key, o => o.Value);
+        }
+
+        public List<int> FormValidColumnsList(Dictionary<string, int> extractedColumnsDictionary)
+        {
+            List<int> columnsList = new List<int>();
 
             foreach (var columnName in _columnContainer)
             {
-                if (dictionary.ContainsKey(columnName))
-                    columnsList.Add(dictionary[columnName]);
+                columnsList.Add(extractedColumnsDictionary.ContainsKey(columnName)
+                    ? extractedColumnsDictionary[columnName]
+                    : IndexNotFound);
             }
 
-            return dictionary;
+            return columnsList;
         }
 
         public Company FormCompany(string[] values, List<int> columnsList)
@@ -62,7 +70,7 @@ namespace CustomMultipartFormDataStreamProvider.FileColumnsFormatter
 
         private bool ValueIsValid(List<int> columnsList, string[] values, int i)
         {
-            return columnsList.Contains(i) && values.Length >= columnsList[i];
+            return columnsList.Count > i && values.Length > i && columnsList[i] != IndexNotFound;
         }
     }
 }

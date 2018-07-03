@@ -32,11 +32,9 @@
           }
         };
         
-        $http(request)
-          .success(function (d) {
-            alert(d);
-          })
-          .error(function () {
+        $http(request).
+          then(function (response) {
+            alert("Upload complete");
           });
       }
     }).controller('companiesController', [

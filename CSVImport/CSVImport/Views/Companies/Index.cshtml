@@ -3,10 +3,9 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-<div>Companies page</div>
+<h2>Companies</h2>
 
-<div class="bs-component" ng-controller="companiesController">
+<div ng-controller="companiesController">
     <table class="table table-striped table-hover">
         <thead>
         <tr>
@@ -20,17 +19,21 @@
         </tr>
         </thead>
         <tbody>
-            <tr dir-paginate="company in companies| itemsPerPage: 10">
-                <td>{{company.ExternalId}}</td>
-                <td>{{company.TradingName}}</td>
-                <td>{{company.CompanyType}}</td>
-                <td>{{company.IsWarehouse}}</td>
-                <td>{{company.IsForwarder}}</td>
-                <td>{{company.Phone}}</td>
-                <td>{{company.Fax}}</td>
-            </tr>
+        <tr dir-paginate="company in companies| itemsPerPage: 10">
+            <td>{{company.ExternalId}}</td>
+            <td>{{company.TradingName}}</td>
+            <td>{{company.CompanyType}}</td>
+            <td>{{company.IsWarehouse}}</td>
+            <td>{{company.IsForwarder}}</td>
+            <td>{{company.Phone}}</td>
+            <td>{{company.Fax}}</td>
+        </tr>
 
-            <dir-pagination-controls></dir-pagination-controls>
+        <dir-pagination-controls></dir-pagination-controls>
         </tbody>
     </table>
+
+    <br/>
+
+    <a href="/Home">Home Page</a>
 </div>

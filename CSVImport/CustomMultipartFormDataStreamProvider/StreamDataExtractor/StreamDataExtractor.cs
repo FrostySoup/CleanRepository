@@ -31,11 +31,16 @@ namespace CustomMultipartFormDataStreamProvider.StreamDataExtractor
 
                     if (values?.Length > 1)
                     {
-                        headers = headers ?? _fileColumnsFormatter.ReadColumnIndexes(values, columnsList);
-
-                        var company = _fileColumnsFormatter.FormCompany(values, columnsList);
-
-                        await _companyRepository.AddCompany(company);
+                        if (headers != null)
+                        {
+                            var company = _fileColumnsFormatter.FormCompany(values, columnsList);
+                            await _companyRepository.AddCompany(company);
+                        }
+                        else
+                        {
+                            headers = _fileColumnsFormatter.ReadColumnIndexes(values);
+                            columnsList = _fileColumnsFormatter.FormValidColumnsList(headers);
+                        }
                     }
                 }
             }

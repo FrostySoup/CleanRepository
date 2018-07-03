@@ -9,5 +9,6 @@ namespace Repository.CompanyRepository
     {
         Task<Company> AddCompany(Company company);
         Task<List<CompanyViewModel>> GetAllCompanies();
+        Task AddCompaniesList(List<Company> companiesList);
     }
 }

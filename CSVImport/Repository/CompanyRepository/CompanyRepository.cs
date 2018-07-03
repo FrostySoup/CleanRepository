@@ -38,5 +38,19 @@ namespace Repository.CompanyRepository
                     .ToListAsync();
             }
         }
+
+        public async Task AddCompaniesList(List<Company> companiesList)
+        {
+            using (var db = new ImportContext())
+            {
+                db.Configuration.AutoDetectChangesEnabled = false;
+
+                foreach (var company in companiesList)
+                {
+                    db.Companies.Add(company);
+                }
+                await db.SaveChangesAsync();
+            }
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace CSVImport
             container.RegisterType<ICompanyDataService, CompanyDataService>();
             container.RegisterType<IFileColumnsFormatter, FileColumnsFormatter>();
             container.RegisterType<IStreamDataExtractor, StreamDataExtractor>();
-            container.RegisterType<ICompanyRepository, CompanyRepository>();
+            container.RegisterType<ICompanyRepository, BulkCompanyRepository>();
 
             // return the container so it can be used for the dependencyresolver.  
             return container;

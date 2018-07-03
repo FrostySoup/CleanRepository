@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Data.ViewModel
+﻿namespace Data.ViewModel
 {
     public class CompanyViewModel
     {

@@ -2,7 +2,6 @@
 using System.IO;
 using System.Threading.Tasks;
 using CustomMultipartFormDataStreamProvider.StreamDataExtractor;
-using Data.Model;
 using Data.ViewModel;
 using Repository.CompanyRepository;
 

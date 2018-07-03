@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileImportTest", "FileImportTest\FileImportTest.csproj", "{08294537-41DD-4FD3-A685-FE7A3E6BCA9C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayerTest", "BusinessLayerTest\BusinessLayerTest.csproj", "{56674C20-33D5-4F82-9495-B68EB7B54478}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,12 +41,16 @@ Global
 		{08294537-41DD-4FD3-A685-FE7A3E6BCA9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08294537-41DD-4FD3-A685-FE7A3E6BCA9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08294537-41DD-4FD3-A685-FE7A3E6BCA9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56674C20-33D5-4F82-9495-B68EB7B54478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56674C20-33D5-4F82-9495-B68EB7B54478}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56674C20-33D5-4F82-9495-B68EB7B54478}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56674C20-33D5-4F82-9495-B68EB7B54478}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {3C8C41A8-504F-41DE-93EF-E4BD043F66C0}
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35
+		SolutionGuid = {3C8C41A8-504F-41DE-93EF-E4BD043F66C0}
 	EndGlobalSection
 EndGlobal

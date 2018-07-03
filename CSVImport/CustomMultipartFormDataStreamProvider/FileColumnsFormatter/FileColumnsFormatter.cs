@@ -13,6 +13,9 @@ namespace CustomMultipartFormDataStreamProvider.FileColumnsFormatter
 
         public Dictionary<string, int> ReadColumnIndexes(string[] headers)
         {
+            if (headers == null)
+                return new Dictionary<string, int>();
+
             return headers.Select((v, i) => new { Key = v, Value = i })
                 .ToDictionary(o => o.Key, o => o.Value);
         }
